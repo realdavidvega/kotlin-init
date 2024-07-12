@@ -1,0 +1,62 @@
+[versions]
+# Gradle
+gradle-wrapper = "8.8"
+
+# Kotlin
+kotlin = "2.0.0"
+kotlin-logging = "7.0.0"
+kotlinx-datetime = "0.6.0"
+kotlinx-serialization = "1.7.0"
+kotlinx-coroutines = "1.8.1"
+
+# Kotest
+kotest = "5.9.1"
+
+# Spotless
+spotless = "6.25.0"
+ktfmt = "0.51"
+
+# Ktlint
+ktlint = "1.3.0"
+gradle-ktlint = "12.1.1"
+
+# Other
+logback = "1.5.6"
+
+[libraries]
+# Kotlin
+kotlin-logging = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+# Kotest
+kotest-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+
+# Other
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+[bundles]
+kotlin = [
+    "kotlin-logging",
+    "kotlinx-datetime",
+    "kotlinx-coroutines",
+    "kotlinx-serialization-json",
+]
+
+kotest = [
+    "kotest-junit5",
+    "kotest-assertions"
+]
+
+[plugins]
+# Kotlin
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# Spotless
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+# Ktlint
+gradle-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "gradle-ktlint" }
