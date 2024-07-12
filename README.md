@@ -6,9 +6,6 @@ My personal Kotlin base project template.
 
 - Kotlin
 - Kotlin Coroutines
-- Kotlin Serialization
-- Kotlin Logging
-- Kotlin Datetime
 
 ## Testing libraries
 
