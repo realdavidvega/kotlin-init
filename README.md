@@ -2,16 +2,19 @@
 
 My personal Kotlin base project template.
 
-Base libraries: 
+## Base libraries
+
 - Kotlin
 - Kotlin Coroutines
 - Kotlin Serialization
 - Kotlin Logging
 - Kotlin Datetime
 
-Testing libraries:
+## Testing libraries
+
 - Kotest
 
-Other libraries:
+## Other libraries
+
 - Spotless
 - Ktlint
