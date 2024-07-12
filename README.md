@@ -1,12 +1,11 @@
 # Kotlin Init
 
-My personal Kotlin base project template.
+My personal minimal Kotlin base project template.
 
 ## Base libraries
 
 - Kotlin
 - Kotlin Coroutines
-- Kotlin Serialization
 
 ## Testing libraries
 
