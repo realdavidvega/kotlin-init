@@ -10,7 +10,7 @@ My personal Kotlin base project template.
 
 ## Testing libraries
 
-- Kotest
+- Kotest (JUnit5 + Assertions)
 
 ## Other libraries
 

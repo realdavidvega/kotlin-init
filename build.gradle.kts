@@ -15,7 +15,6 @@ repositories {
 
 dependencies {
   implementation(libs.bundles.kotlin)
-  implementation(libs.logback)
   testImplementation(libs.bundles.kotest)
 }
 
