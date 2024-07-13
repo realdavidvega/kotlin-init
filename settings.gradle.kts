@@ -8,8 +8,9 @@ pluginManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 // root project
-rootProject.name = "kotlin-init"
+val projectName = "kotlin-init"
+rootProject.name = projectName
 
 // sub-projects
-include("kotlin-init-core")
-project(":kotlin-init-core").projectDir = file("core")
+include("$projectName-core")
+project(":$projectName-core").projectDir = file("core")
