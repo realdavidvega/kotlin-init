@@ -14,6 +14,3 @@ rootProject.name = projectName
 // sub-projects
 include("$projectName-core")
 project(":$projectName-core").projectDir = file("core")
-
-include("$projectName-examples")
-project(":$projectName-examples").projectDir = file("examples")

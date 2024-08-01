@@ -12,7 +12,7 @@ allprojects {
 
 tasks {
   wrapper {
-    gradleVersion = libs.versions.gradle.wrapper.get()
+    gradleVersion = libs.versions.gradle.wrapper.version
     distributionType = Wrapper.DistributionType.BIN
   }
 }

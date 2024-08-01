@@ -1,5 +1,9 @@
 @file:Suppress("UnstableApiUsage")
 
+val java: String = libs.versions.java.version
+val ktfmt: String = libs.versions.ktfmt.version
+val ktlint: String = libs.versions.ktlint.version
+
 plugins {
   base
   alias(libs.plugins.kotlin.jvm)
@@ -17,22 +21,22 @@ dependencies {
   testImplementation(libs.bundles.kotest)
 }
 
-kotlin { jvmToolchain(21) }
-
 java {
-  sourceCompatibility = JavaVersion.VERSION_21
-  targetCompatibility = JavaVersion.VERSION_21
+  toolchain { languageVersion(java) }
 }
+
+kotlin { jvmToolchain { languageVersion(java) } }
 
 spotless {
-  kotlin { ktfmt(libs.versions.ktfmt.get()).googleStyle() }
-  kotlinGradle { ktfmt(libs.versions.ktfmt.get()).googleStyle() }
+  kotlin { ktfmt(ktfmt).googleStyle() }
+  kotlinGradle { ktfmt(ktfmt).googleStyle() }
 }
 
-ktlint { version.set(libs.versions.ktlint.get()) }
+ktlint { version.set(ktlint) }
 
 tasks {
-  compileKotlin { compilerOptions { freeCompilerArgs.add("-Xcontext-receivers") } }
-  compileTestKotlin { compilerOptions { freeCompilerArgs.add("-Xcontext-receivers") } }
+  val args = listOf("-Xjsr305=strict", "-Xcontext-receivers")
+  compileKotlin { compilerOptions { freeCompilerArgs.addAll(args) } }
+  compileTestKotlin { compilerOptions { freeCompilerArgs.addAll(args) } }
   test { useJUnitPlatform() }
 }

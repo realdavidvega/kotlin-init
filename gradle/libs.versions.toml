@@ -1,4 +1,7 @@
 [versions]
+# Java
+java = "21"
+
 # Gradle
 gradle-wrapper = "8.8"
 
