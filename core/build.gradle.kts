@@ -21,9 +21,7 @@ dependencies {
   testImplementation(libs.bundles.kotest)
 }
 
-java {
-  toolchain { languageVersion(java) }
-}
+java { toolchain { languageVersion(java) } }
 
 kotlin { jvmToolchain { languageVersion(java) } }
 
@@ -35,7 +33,7 @@ spotless {
 ktlint { version.set(ktlint) }
 
 tasks {
-  val args = listOf("-Xjsr305=strict", "-Xcontext-receivers")
+  val args = listOf("-Xexpect-actual-classes", "-Xlambdas=indy", "-Xcontext-parameters")
   compileKotlin { compilerOptions { freeCompilerArgs.addAll(args) } }
   compileTestKotlin { compilerOptions { freeCompilerArgs.addAll(args) } }
   test { useJUnitPlatform() }
